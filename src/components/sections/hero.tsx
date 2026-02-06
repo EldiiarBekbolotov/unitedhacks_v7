@@ -40,11 +40,12 @@ const HeroSection = () => {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative w-full overflow-hidden min-h-[90vh] flex items-center"
+      className="relative w-full overflow-visible min-h-[90vh] flex items-center"
     >
-      {/* Parallax background image */}
+      {/* Parallax background image + overlay: extends well below section for long, soft fade into About */}
       <div
-        className="absolute inset-0 z-0"
+        className="absolute top-0 left-0 right-0 z-0 min-h-[90vh]"
+        style={{ bottom: "-35vh" }}
         aria-hidden
       >
         <div
@@ -55,15 +56,24 @@ const HeroSection = () => {
             willChange: "transform",
           }}
         />
-        {/* Overlay: fades from 70% at top to solid at bottom so it blends into About */}
+        {/* Overlay: reaches full opacity at section boundary (72% = 90vh) so one solid #1a0930, no line */}
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(to bottom, rgba(26,9,48,0.7) 0%, rgba(26,9,48,0.85) 50%, rgba(26,9,48,1) 100%)",
+            background: "linear-gradient(to bottom, rgba(26,9,48,0.7) 0%, rgba(26,9,48,0.82) 28%, rgba(26,9,48,0.92) 52%, rgba(26,9,48,1) 72%, rgba(26,9,48,1) 100%)",
           }}
         />
       </div>
-      <SectionBackground variant="hero" />
+      {/* Fade out hero texture (scanlines/glows) at bottom so no hard line at section boundary */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          maskImage: "linear-gradient(to bottom, black 0%, black 70%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 70%, transparent 100%)",
+        }}
+      >
+        <SectionBackground variant="hero" />
+      </div>
 
       {/* Floating pixel accents */}
     

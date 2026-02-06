@@ -9,19 +9,13 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="relative flex flex-col items-center justify-start bg-jh-purple-deep text-jh-white py-8 sm:py-12 md:py-16 px-4 sm:px-6 overflow-hidden"
+      className="relative flex flex-col items-center justify-start text-jh-white py-8 sm:py-12 md:py-16 px-4 sm:px-6 overflow-hidden"
     >
-      {/* Top gradient: continues the hero's bottom fade so one smooth transition */}
-      <div
-        className="absolute top-0 left-0 right-0 z-[1] pointer-events-none"
-        style={{
-          height: "clamp(100px, 18vh, 180px)",
-          background: "linear-gradient(to bottom, rgba(26,9,48,0.88) 0%, rgba(26,9,48,0.96) 45%, rgba(26,9,48,1) 100%)",
-        }}
-        aria-hidden
-      />
-      <SectionBackground variant="dots" />
-      <SectionBackground variant="glow-bottom" className="opacity-60" />
+      {/* First 35vh transparent so hero’s solid #1a0930 shows through (no second layer, no line) */}
+      <div className="absolute top-[35vh] left-0 right-0 bottom-0 z-[1] pointer-events-none bg-jh-purple-deep">
+        <SectionBackground variant="dots" />
+      </div>
+      <SectionBackground variant="glow-bottom" className="opacity-60 z-[1]" />
 
       {/* Section Title with Retro Shadow Effect */}
       <motion.div
