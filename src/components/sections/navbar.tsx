@@ -1,25 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // The navbar appears after scrolling a certain amount (e.g., past the hero or announcement bar)
-      if (window.scrollY > 100) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
     const navLinks = [
       { name: "About", href: "#about" },
@@ -31,24 +16,31 @@ const Navbar = () => {
 
     return (
       <>
-        {/* Main Sticky Navbar (Hidden by default, slides down on scroll) */}
+        {/* Main Sticky Navbar - Always Visible */}
         <nav
-          className={`fixed top-0 left-0 w-full transition-all duration-300 px-8 py-3 z-[1000000] bg-jh-purple-deep/95 backdrop-blur-md border-b border-jh-purple-accent/30 ${
-            isScrolled 
-              ? "opacity-100 translate-y-0" 
-              : "opacity-0 -translate-y-full pointer-events-none"
-          }`}
+          className="fixed top-0 left-0 w-full px-4 sm:px-8 py-3 z-[1000000] bg-jh-purple-deep/95 backdrop-blur-md border-b border-jh-purple-accent/30"
           style={{ height: "72px" }}
         >
             <div className="flex justify-between items-center h-full max-w-[1200px] mx-auto">
-              <div>
-                <a href="#hero" className="font-display text-4xl text-jh-white hover:text-jh-yellow transition-colors" onClick={(e) => {
+              <a 
+                href="#hero" 
+                className="flex items-center gap-3 hover:opacity-80 transition-opacity" 
+                onClick={(e) => {
                   e.preventDefault();
                   window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}>
+                }}
+              >
+                <Image
+                  src="/logo_main.webp"
+                  alt="United Hacks Logo"
+                  width={50}
+                  height={50}
+                  className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
+                />
+                <span className="font-display text-2xl sm:text-3xl md:text-4xl text-jh-white">
                   United Hacks
-                </a>
-              </div>
+                </span>
+              </a>
 
             {/* Desktop Links */}
             <div className="hidden md:flex space-x-6 text-4xl font-display text-jh-white">
@@ -89,7 +81,7 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed top-16 left-0 w-[40%] h-screen bg-jh-purple-deep z-[50] flex flex-col py-5 px-3 shadow-lg transition-transform duration-300 md:hidden border-r border-jh-purple-accent/30 ${
+        className={`fixed top-[72px] left-0 w-[40%] h-screen bg-jh-purple-deep z-[50] flex flex-col py-5 px-3 shadow-lg transition-transform duration-300 md:hidden border-r border-jh-purple-accent/30 ${
           mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

@@ -29,10 +29,10 @@ const AboutSection = () => {
             className="absolute top-0.5 sm:top-1 left-0.5 sm:left-1 text-4xl sm:text-5xl md:text-7xl font-bold font-jersey text-[#9937FE] opacity-80 select-none whitespace-nowrap"
             aria-hidden="true"
           >
-            About United Hacks
+            About Hack United
           </h2>
           <h2 className="relative text-4xl sm:text-5xl md:text-7xl font-bold font-jersey text-jh-white drop-shadow-[4px_4px_0px_rgba(153,55,254,0.8)] whitespace-nowrap">
-            About United Hacks
+            About Hack United
           </h2>
       </motion.div>
 
@@ -59,27 +59,19 @@ const AboutSection = () => {
               <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
                 {/* Text Content */}
                 <div className="w-full md:w-[60%] text-left">
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-jersey font-bold text-[#300060] leading-tight mb-4 uppercase">
-                    The Global High School Hackathon
-                  </h3>
                   <p className="text-sm sm:text-base md:text-lg font-nunito text-[#300060] leading-relaxed mb-6">
-                    Join thousands of students globally for the 7th edition of United Hacks. 
-                    Whether you're a beginner or a pro, United Hacks is the perfect place to learn, build, and connect with a global community. 
-                    With $50,000+ in prizes, expert mentors, and workshops from industry leaders, you'll have everything you need to bring your wildest ideas to life.
+                    Hack United is a nonprofit organization that hosts United Hacks. In the past, we have hosted 6 iterations of United Hacks, with over 3,750+ combined participants from over 50 countries. Our hackathons are different because we emphasize soft skills often overlooked in the tech world.
                   </p>
                   
-                  {/* Video Link Placeholder */}
+                  {/* Learn More Button */}
                   <div className="mt-4">
                     <a 
-                      href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                      href="https://hackunited.org" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-[#300060] text-white font-jersey text-2xl rounded-sm hover:bg-[#4C0973] transition-colors"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                      Watch the Trailer
+                      Learn More About Hack United
                     </a>
                   </div>
                 </div>

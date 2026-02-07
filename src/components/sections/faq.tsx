@@ -53,7 +53,7 @@ const FAQSection = () => {
       },
       {
         question: "Who can participate?",
-        answer: "United Hacks is open to all students globally who are 13 years of age or older. No prior experience is required—just a curiosity to learn and build!"
+        answer: "United Hacks is open to all participants globally who are 13 years of age or older. No prior experience is required—just a curiosity to learn and build!"
       },
       {
         question: "Is it remote?",

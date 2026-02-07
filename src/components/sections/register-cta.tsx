@@ -74,7 +74,7 @@ const RegisterCTA = () => {
             </ul>
 
             <a
-              href="https://unitedhacks.hackunited.org"
+              href="https://unitedhacksv7.devpost.com"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-retro inline-flex text-xl sm:text-2xl px-10 py-4 rounded-sm"
