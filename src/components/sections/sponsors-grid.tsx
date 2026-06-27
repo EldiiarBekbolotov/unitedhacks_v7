@@ -21,9 +21,45 @@ const sponsors: Sponsor[] = [
     padding: "p-6",
     dark: true,
   },
+  {
+    name: "Art of Problem Solving",
+    logo: "/aops.png",
+    url: "https://artofproblemsolving.com",
+    padding: "p-6",
+  },
+  {
+    name: "Cache Labs",
+    logo: "/cachelabs.png",
+    url: "https://cachelabs.io",
+    padding: "p-3",
+  },
+  {
+    name: "CodeCrafters",
+    logo: "/codecrafters.png",
+    url: "https://codecrafters.io",
+    padding: "p-4",
+  },
+  {
+    name: "Featherless",
+    logo: "/featherless.jpeg",
+    url: "https://featherless.ai",
+    padding: "p-8",
+  },
+  {
+    name: "Interview Cake",
+    logo: "/interviewcake.png",
+    url: "https://www.interviewcake.com",
+    padding: "p-4",
+  },
+  {
+    name: ".xyz",
+    logo: "/xyz.png",
+    url: "https://gen.xyz",
+    padding: "p-3",
+  },
 ];
 
-const PLACEHOLDER_COUNT = 11;
+const PLACEHOLDER_COUNT = 5;
 
 const SponsorsGrid = () => {
   const placeholderSlots = Array.from({ length: PLACEHOLDER_COUNT }, (_, i) => ({
